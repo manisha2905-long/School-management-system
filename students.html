@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Management - Add, view, search, and manage student records.">
+    <title>Students - School Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="school-logo">🏫</div>
+            <h1 class="school-name">Bright Future Academy</h1>
+            <p class="school-tagline">Shaping Tomorrow's Leaders</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" id="nav-dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="students.html" class="nav-link active" id="nav-students">
+                <span class="nav-icon">👨‍🎓</span>
+                <span class="nav-text">Students</span>
+            </a>
+            <a href="attendance.html" class="nav-link" id="nav-attendance">
+                <span class="nav-icon">✅</span>
+                <span class="nav-text">Attendance</span>
+            </a>
+            <a href="fees.html" class="nav-link" id="nav-fees">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">Fees</span>
+            </a>
+            <a href="exams.html" class="nav-link" id="nav-exams">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Exams</span>
+            </a>
+            <a href="teachers.html" class="nav-link" id="nav-teachers">
+                <span class="nav-icon">👩‍🏫</span>
+                <span class="nav-text">Teachers</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle" title="Toggle Menu">☰</button>
+            <div class="header-left">
+                <h2 class="page-title">👨‍🎓 Student Management</h2>
+                <p class="welcome-message">Add, view, and manage student records.</p>
+            </div>
+            <div class="header-right">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <!-- ===== ADD STUDENT FORM ===== -->
+            <div class="form-card">
+                <h3>➕ Add New Student</h3>
+                <form id="studentForm">
+                    <div class="form-grid">
+                        <!-- Student ID Field -->
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" placeholder="e.g., STU001">
+                            <span class="error-text">Student ID is required</span>
+                        </div>
+                        <!-- Student Name Field -->
+                        <div class="form-group">
+                            <label for="studentName">Full Name</label>
+                            <input type="text" id="studentName" placeholder="e.g., John Doe">
+                            <span class="error-text">Name is required</span>
+                        </div>
+                        <!-- Class Field -->
+                        <div class="form-group">
+                            <label for="studentClass">Class</label>
+                            <input type="text" id="studentClass" placeholder="e.g., 10th Grade">
+                            <span class="error-text">Class is required</span>
+                        </div>
+                        <!-- Age Field -->
+                        <div class="form-group">
+                            <label for="studentAge">Age</label>
+                            <input type="number" id="studentAge" placeholder="e.g., 15" min="3" max="25">
+                            <span class="error-text">Age is required</span>
+                        </div>
+                    </div>
+                    <div class="mt-16">
+                        <button type="submit" class="btn btn-primary">➕ Add Student</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ===== STUDENTS TABLE ===== -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>📋 Student List</h3>
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                        <!-- Search box to find students by name -->
+                        <div class="search-box">
+                            <input type="text" id="studentSearch" placeholder="Search students...">
+                        </div>
+                        <button class="btn btn-export btn-sm" id="exportStudents">📥 Export CSV</button>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Age</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <!-- Empty state shown when no students exist -->
+                <div class="table-empty" id="studentsEmpty" style="display:none;">
+                    <span class="empty-icon">👨‍🎓</span>
+                    No students found. Add your first student above!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exam Management - Schedule and manage upcoming examinations.">
+    <title>Exams - School Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="school-logo">🏫</div>
+            <h1 class="school-name">Bright Future Academy</h1>
+            <p class="school-tagline">Shaping Tomorrow's Leaders</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" id="nav-dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="students.html" class="nav-link" id="nav-students">
+                <span class="nav-icon">👨‍🎓</span>
+                <span class="nav-text">Students</span>
+            </a>
+            <a href="attendance.html" class="nav-link" id="nav-attendance">
+                <span class="nav-icon">✅</span>
+                <span class="nav-text">Attendance</span>
+            </a>
+            <a href="fees.html" class="nav-link" id="nav-fees">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">Fees</span>
+            </a>
+            <a href="exams.html" class="nav-link active" id="nav-exams">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Exams</span>
+            </a>
+            <a href="teachers.html" class="nav-link" id="nav-teachers">
+                <span class="nav-icon">👩‍🏫</span>
+                <span class="nav-text">Teachers</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle" title="Toggle Menu">☰</button>
+            <div class="header-left">
+                <h2 class="page-title">📝 Exam Management</h2>
+                <p class="welcome-message">Schedule and manage upcoming examinations.</p>
+            </div>
+            <div class="header-right">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <!-- ===== ADD EXAM FORM ===== -->
+            <div class="form-card">
+                <h3>➕ Schedule New Exam</h3>
+                <form id="examForm">
+                    <div class="form-grid">
+                        <!-- Exam Name -->
+                        <div class="form-group">
+                            <label for="examName">Exam Name</label>
+                            <input type="text" id="examName" placeholder="e.g., Mid-Term Exam">
+                            <span class="error-text">Exam name is required</span>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group">
+                            <label for="examSubject">Subject</label>
+                            <input type="text" id="examSubject" placeholder="e.g., Mathematics">
+                            <span class="error-text">Subject is required</span>
+                        </div>
+                        <!-- Exam Date -->
+                        <div class="form-group">
+                            <label for="examDate">Exam Date</label>
+                            <input type="date" id="examDate">
+                            <span class="error-text">Date is required</span>
+                        </div>
+                    </div>
+                    <div class="mt-16">
+                        <button type="submit" class="btn btn-primary">➕ Schedule Exam</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ===== EXAMS TABLE ===== -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>📋 Exam Schedule</h3>
+                    <button class="btn btn-export btn-sm" id="exportExams">📥 Export CSV</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Exam Name</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="examsTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <!-- Empty state -->
+                <div class="table-empty" id="examsEmpty" style="display:none;">
+                    <span class="empty-icon">📝</span>
+                    No exams scheduled. Add your first exam above!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

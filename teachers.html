@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teacher Management - Add, view, search, and manage teacher records.">
+    <title>Teachers - School Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="school-logo">🏫</div>
+            <h1 class="school-name">Bright Future Academy</h1>
+            <p class="school-tagline">Shaping Tomorrow's Leaders</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" id="nav-dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="students.html" class="nav-link" id="nav-students">
+                <span class="nav-icon">👨‍🎓</span>
+                <span class="nav-text">Students</span>
+            </a>
+            <a href="attendance.html" class="nav-link" id="nav-attendance">
+                <span class="nav-icon">✅</span>
+                <span class="nav-text">Attendance</span>
+            </a>
+            <a href="fees.html" class="nav-link" id="nav-fees">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">Fees</span>
+            </a>
+            <a href="exams.html" class="nav-link" id="nav-exams">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Exams</span>
+            </a>
+            <a href="teachers.html" class="nav-link active" id="nav-teachers">
+                <span class="nav-icon">👩‍🏫</span>
+                <span class="nav-text">Teachers</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle" title="Toggle Menu">☰</button>
+            <div class="header-left">
+                <h2 class="page-title">👩‍🏫 Teacher Management</h2>
+                <p class="welcome-message">Add, view, and manage teaching staff records.</p>
+            </div>
+            <div class="header-right">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <!-- ===== ADD TEACHER FORM ===== -->
+            <div class="form-card">
+                <h3>➕ Add New Teacher</h3>
+                <form id="teacherForm">
+                    <div class="form-grid">
+                        <!-- Teacher Name -->
+                        <div class="form-group">
+                            <label for="teacherName">Full Name</label>
+                            <input type="text" id="teacherName" placeholder="e.g., Mrs. Smith">
+                            <span class="error-text">Name is required</span>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group">
+                            <label for="teacherSubject">Subject</label>
+                            <input type="text" id="teacherSubject" placeholder="e.g., Mathematics">
+                            <span class="error-text">Subject is required</span>
+                        </div>
+                        <!-- Contact Number -->
+                        <div class="form-group">
+                            <label for="teacherContact">Contact Number</label>
+                            <input type="tel" id="teacherContact" placeholder="e.g., 9876543210">
+                            <span class="error-text">Contact is required</span>
+                        </div>
+                    </div>
+                    <div class="mt-16">
+                        <button type="submit" class="btn btn-primary">➕ Add Teacher</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ===== TEACHERS TABLE ===== -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>📋 Teacher List</h3>
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                        <!-- Search box to find teachers -->
+                        <div class="search-box">
+                            <input type="text" id="teacherSearch" placeholder="Search teachers...">
+                        </div>
+                        <button class="btn btn-export btn-sm" id="exportTeachers">📥 Export CSV</button>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teachersTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <!-- Empty state -->
+                <div class="table-empty" id="teachersEmpty" style="display:none;">
+                    <span class="empty-icon">👩‍🏫</span>
+                    No teachers found. Add your first teacher above!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="School Management System - Dashboard for managing students, teachers, attendance, fees, and exams.">
+    <title>School Management System - Dashboard</title>
+    <!-- Google Font for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <aside class="sidebar" id="sidebar">
+        <!-- School branding -->
+        <div class="sidebar-header">
+            <div class="school-logo">🏫</div>
+            <h1 class="school-name">Bright Future Academy</h1>
+            <p class="school-tagline">Shaping Tomorrow's Leaders</p>
+        </div>
+
+        <!-- Navigation links to all modules -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link active" id="nav-dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="students.html" class="nav-link" id="nav-students">
+                <span class="nav-icon">👨‍🎓</span>
+                <span class="nav-text">Students</span>
+            </a>
+            <a href="attendance.html" class="nav-link" id="nav-attendance">
+                <span class="nav-icon">✅</span>
+                <span class="nav-text">Attendance</span>
+            </a>
+            <a href="fees.html" class="nav-link" id="nav-fees">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">Fees</span>
+            </a>
+            <a href="exams.html" class="nav-link" id="nav-exams">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Exams</span>
+            </a>
+            <a href="teachers.html" class="nav-link" id="nav-teachers">
+                <span class="nav-icon">👩‍🏫</span>
+                <span class="nav-text">Teachers</span>
+            </a>
+        </nav>
+
+        <!-- Dark mode toggle at the bottom of sidebar -->
+        <div class="sidebar-footer">
+            <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT AREA ===== -->
+    <main class="main-content">
+        <!-- Top header bar with welcome message -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle" title="Toggle Menu">☰</button>
+            <div class="header-left">
+                <h2 class="page-title">Dashboard</h2>
+                <p class="welcome-message">Welcome back! Here's your school overview.</p>
+            </div>
+            <div class="header-right">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+
+        <!-- ===== DASHBOARD CARDS ===== -->
+        <section class="dashboard-cards" id="dashboardCards">
+            <!-- Total Students Card -->
+            <div class="card card-students" id="card-students">
+                <div class="card-icon">👨‍🎓</div>
+                <div class="card-info">
+                    <h3 class="card-title">Total Students</h3>
+                    <p class="card-value" id="totalStudents">0</p>
+                    <span class="card-subtitle">Enrolled</span>
+                </div>
+            </div>
+
+            <!-- Total Teachers Card -->
+            <div class="card card-teachers" id="card-teachers">
+                <div class="card-icon">👩‍🏫</div>
+                <div class="card-info">
+                    <h3 class="card-title">Total Teachers</h3>
+                    <p class="card-value" id="totalTeachers">0</p>
+                    <span class="card-subtitle">Active Staff</span>
+                </div>
+            </div>
+
+            <!-- Attendance Card -->
+            <div class="card card-attendance" id="card-attendance">
+                <div class="card-icon">✅</div>
+                <div class="card-info">
+                    <h3 class="card-title">Attendance</h3>
+                    <p class="card-value" id="attendancePercent">0%</p>
+                    <span class="card-subtitle">Today's Rate</span>
+                </div>
+            </div>
+
+            <!-- Fees Collected Card -->
+            <div class="card card-fees" id="card-fees">
+                <div class="card-icon">💰</div>
+                <div class="card-info">
+                    <h3 class="card-title">Fees Collected</h3>
+                    <p class="card-value" id="feesCollected">₹0</p>
+                    <span class="card-subtitle">Total Revenue</span>
+                </div>
+            </div>
+
+            <!-- Upcoming Exams Card -->
+            <div class="card card-exams" id="card-exams">
+                <div class="card-icon">📅</div>
+                <div class="card-info">
+                    <h3 class="card-title">Upcoming Exams</h3>
+                    <p class="card-value" id="upcomingExams">0</p>
+                    <span class="card-subtitle">Scheduled</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== QUICK OVERVIEW SECTION ===== -->
+        <section class="overview-section">
+            <!-- Recent Students Table -->
+            <div class="overview-card" id="recentStudentsCard">
+                <div class="overview-header">
+                    <h3>📋 Recent Students</h3>
+                    <a href="students.html" class="view-all-link">View All →</a>
+                </div>
+                <div class="overview-body">
+                    <table class="overview-table" id="recentStudentsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Age</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentStudentsBody">
+                            <!-- Filled dynamically by JavaScript -->
+                        </tbody>
+                    </table>
+                    <p class="empty-message" id="noStudentsMsg">No students enrolled yet.</p>
+                </div>
+            </div>
+
+            <!-- Upcoming Exams Table -->
+            <div class="overview-card" id="upcomingExamsCard">
+                <div class="overview-header">
+                    <h3>📝 Upcoming Exams</h3>
+                    <a href="exams.html" class="view-all-link">View All →</a>
+                </div>
+                <div class="overview-body">
+                    <table class="overview-table" id="upcomingExamsTable">
+                        <thead>
+                            <tr>
+                                <th>Exam</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="upcomingExamsBody">
+                            <!-- Filled dynamically by JavaScript -->
+                        </tbody>
+                    </table>
+                    <p class="empty-message" id="noExamsMsg">No exams scheduled yet.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

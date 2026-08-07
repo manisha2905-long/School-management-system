@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attendance Management - Mark and track student attendance records.">
+    <title>Attendance - School Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== SIDEBAR NAVIGATION ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="school-logo">🏫</div>
+            <h1 class="school-name">Bright Future Academy</h1>
+            <p class="school-tagline">Shaping Tomorrow's Leaders</p>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" id="nav-dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="students.html" class="nav-link" id="nav-students">
+                <span class="nav-icon">👨‍🎓</span>
+                <span class="nav-text">Students</span>
+            </a>
+            <a href="attendance.html" class="nav-link active" id="nav-attendance">
+                <span class="nav-icon">✅</span>
+                <span class="nav-text">Attendance</span>
+            </a>
+            <a href="fees.html" class="nav-link" id="nav-fees">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">Fees</span>
+            </a>
+            <a href="exams.html" class="nav-link" id="nav-exams">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Exams</span>
+            </a>
+            <a href="teachers.html" class="nav-link" id="nav-teachers">
+                <span class="nav-icon">👩‍🏫</span>
+                <span class="nav-text">Teachers</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle" title="Toggle Menu">☰</button>
+            <div class="header-left">
+                <h2 class="page-title">✅ Attendance Management</h2>
+                <p class="welcome-message">Mark and track daily student attendance.</p>
+            </div>
+            <div class="header-right">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <!-- ===== DATE SELECTOR & SAVE BUTTON ===== -->
+            <div class="form-card">
+                <h3>📅 Select Date & Save</h3>
+                <div style="display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;">
+                    <div class="form-group">
+                        <label for="attendanceDate">Date</label>
+                        <input type="date" id="attendanceDate">
+                    </div>
+                    <button class="btn btn-primary" id="saveAttendance">💾 Save Attendance</button>
+                </div>
+            </div>
+
+            <!-- ===== ATTENDANCE TABLE ===== -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>📋 Student Attendance</h3>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <!-- Empty state -->
+                <div class="table-empty" id="attendanceEmpty" style="display:none;">
+                    <span class="empty-icon">✅</span>
+                    No students found. Please add students first on the Students page.
+                </div>
+                <!-- Attendance Stats Bar -->
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        ✅ Present: <strong id="presentCount">0</strong>
+                    </div>
+                    <div class="stat-item">
+                        ❌ Absent: <strong id="absentCount">0</strong>
+                    </div>
+                    <div class="stat-item">
+                        📊 Total Marked: <strong id="totalMarked">0</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
