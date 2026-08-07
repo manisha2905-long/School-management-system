@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMY</title>
+</head>
+
+<link rel="stylesheet" href="css/stylesheet">
+<style>
+    /* CSS Reset */
+    body {
+        margin: 0px;
+        padding: 0px;
+        
+        background: url("Screenshot 2026-02-09 011348.png " ) no-repeat center/cover fixed;
+        background-size: cover 100%;
+        size: 1000px;
+         height: 343px;
+        color: rgb(8, 0, 0);
+        /* border-color: black; */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .letf {
+        display: inline-block;
+        /* border: 2px solid rgb(10, 10, 10); */
+        position: static;
+        left: 40px;
+        top: 20px;
+        height: 81px;
+        width: 113px;
+    }
+
+    .letf img {
+        width: 100vh;
+        filter: invert(100%);
+    }
+
+    .letf div {
+        text-align: center;
+        line-height: 2px;
+        font-size: 25px;
+
+    }
+
+    .mid {
+
+        display: block;
+        width: 60%;
+        /* border: 2px solid rgb(7, 7, 7); */
+        margin: -77px auto;
+        /* position:absolute;  */
+
+    }
+
+    .right {
+        display: inline-block;
+        /* border: 2px solid rgb(10, 10, 10); */
+        position: absolute;
+        right: -7px;
+        top: 47px;
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 14px;
+
+    }
+
+    .navbar li a {
+        color: rgb(2, 2, 2);
+        text-decoration: none;
+        padding: 4px 10px;
+        font-size: 22px;
+        width: 18px;
+        height: 18px;
+
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: rgb(97, 7, 214);
+        
+
+    }
+
+    .btn {
+        margin: 0px 9px;
+        background-color: rgb(10, 1, 1);
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid rgb(214, 212, 210);
+        border-radius: 14px;
+        font-size: 15px;
+        font-family: monospace;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(92, 41, 212);
+    }
+
+    .container {
+        line-height: 0%;
+    border: 3px solid rgb(5, 5, 5);
+    border-radius: 4px;
+    margin: 232px 100px;
+    padding: 2% auto;
+    width: 413px;
+    height: 206px;
+    /* text-align: left; */
+    border-radius: 13px;
+    text-align: center;
+    }
+
+    .form-group input {
+        font-size: small;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        display: block;
+        width: 271px;
+        padding: 10px;
+        margin: 4px auto;
+        border-radius: 5px;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+
+    .container button {
+        display: block;
+        width: 118px;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <!-- left box for logo -->
+        <div class="left">
+            <img src="image-removebg-preview.png" alt="bodybuilding" height="80px" ,width="80px">
+
+            <div style="line-height: 0%;"><strong>ManRah Fitness</strong></div>
+        </div>
+        <!-- mid for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#"><strong>Home</strong></a></li>
+                <li><a href="#"><strong>About US</strong></a></li>
+                <li><a href="#"><strong>Fitness Calculator</strong></a></li>
+                <li><a href="#"><strong>Contact US</strong></a></li>
+            </ul>
+        </div>
+        <!-- for buttons -->
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Join the best GYM of Rajsthan NOW</h2>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name=" " placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <input type="text" name=" " placeholder="Enter your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" name=" " placeholder="Enter your Gender">
+            </div>
+            <button class="btn"> Submit</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
